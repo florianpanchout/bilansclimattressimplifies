@@ -6,11 +6,7 @@ import {
   HeaderBody,
   Logo,
   Service,
-  Tool,
-  ToolItemGroup,
-  Button,
 } from '@dataesr/react-dsfr'
-import { useKeycloak } from '@react-keycloak/web'
 
 import Ademe from 'components/base/Ademe'
 
@@ -20,8 +16,6 @@ const Wrapper = styled(HeaderComponent)`
   }
 `
 export default function Header() {
-  const { keycloak } = useKeycloak()
-
   return (
     <Wrapper>
       <HeaderBody>
@@ -33,20 +27,6 @@ export default function Header() {
           title='Bilans Climat Simplifiés'
           description='Plateforme de calcul et transmission des bilans simplifiés prévus par l’article 244 de la loi n° 2020-1721 du 29 décembre 2020'
         />
-        {keycloak.authenticated && (
-          <Tool>
-            <ToolItemGroup>
-              <Button
-                secondary
-                onClick={() => {
-                  keycloak.logout({ redirectUri: window.location.origin })
-                }}
-              >
-                Me déconnecter
-              </Button>
-            </ToolItemGroup>
-          </Tool>
-        )}
       </HeaderBody>
     </Wrapper>
   )

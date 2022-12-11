@@ -19,7 +19,6 @@ import { useBilan, useBilansMutation, useBilansDeletion } from 'hooks/useBilans'
 import MagicLink from 'components/base/MagicLink'
 import Poste from './bilan/Poste'
 import Details from './bilan/Details'
-import DownloadButton from './bilan/DownloadButton'
 
 const StyledTag = styled(Tag)`
   font-size: 2.5rem;
@@ -106,7 +105,6 @@ export default function Bilan() {
                   <Button onClick={() => setPrint(true)}>
                     Imprimer le récapitulatif du bilan
                   </Button>
-                  <DownloadButton id={id} bilan={bilan} />
                 </>
               ) : (
                 <Button

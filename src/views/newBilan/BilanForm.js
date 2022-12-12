@@ -30,7 +30,7 @@ export default function BilanForm(props) {
         />
       )}
       <TextInput
-        label={`SIREN`}
+        label={`SIREN (pas de validation)`}
         value={props.siren}
         onChange={(e) => props.setSiren(e.target.value)}
         messageType={props.errors.includes('siren') ? 'error' : null}
